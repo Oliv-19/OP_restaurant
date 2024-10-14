@@ -1,12 +1,12 @@
+import {createDomElem} from './homeScript'
+
 function menuDom(contentDiv){
    
-    let card = document.createElement('div')
+    let card = createDomElem('div','','card')
 
-    let menutitle = document.createElement('h1')
-    let foodName = document.createElement('h1')
-    menutitle.textContent='Menu'
-    foodName.textContent='Pizza'
-
+    let menutitle = createDomElem('h1','Menu','menuTitle')
+    let foodName = createDomElem('h1','Pizza','foodName')
+   
     card.appendChild(foodName)
     contentDiv.appendChild(menutitle)
     contentDiv.appendChild(card)

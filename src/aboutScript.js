@@ -1,11 +1,11 @@
+import './about.css'
+import {createDomElem} from './homeScript'
+
 function aboutDom(contentDiv){
     
-    let card = document.createElement('div')
-    let form = document.createElement('form')
-    
-
-    let about = document.createElement('h1')
-    about.textContent="About Tom's"
+    let card = createDomElem('div','','card')
+    let form = createDomElem('form','','form')
+    let about = createDomElem('h1',"About Tom's",'about')
 
     card.appendChild(about)
     card.appendChild(form)

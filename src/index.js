@@ -1,6 +1,8 @@
+import './index.css'
 import { DomElems } from "./homeScript";
 import { menuDom } from "./menuScript";
 import { aboutDom } from "./aboutScript";
+
 
 let contentDiv = document.querySelector('#content')
 DomElems(contentDiv)
