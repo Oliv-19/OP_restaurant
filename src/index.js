@@ -1,11 +1,11 @@
 import './index.css'
 import { DomElems } from "./homeScript";
 import { menuDom } from "./menuScript";
-import { aboutDom } from "./aboutScript";
+import { contactDom } from "./contactScript";
 
 
 let contentDiv = document.querySelector('#content')
-DomElems(contentDiv)
+contactDom(contentDiv)
 
 let nav = document.querySelector('nav')
 
@@ -18,9 +18,9 @@ function changeTab(e){
         } else if(e.target.className == 'menu'){
             
             menuDom(contentDiv)
-        } else if(e.target.className == 'about'){
+        } else if(e.target.className == 'contact'){
             
-            aboutDom(contentDiv)
+            contactDom(contentDiv)
         }
     }
 }

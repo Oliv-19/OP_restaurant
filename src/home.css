@@ -45,6 +45,7 @@ img{
 }
 
 #info{
+    background-color: white;
     min-height: 50vh;
     text-align: center;
     padding: 50px 130px;
