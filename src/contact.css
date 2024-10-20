@@ -1,4 +1,7 @@
-#content{
+#bg{
+    width: 100%;
+    height: 100%;
+    display: flex;
     background: center no-repeat url('https://orders.co/static/99a59eec0735fca313bf2b93349bd5d6/f659b/Italian-Restaurant-Design-Creating-an-Inviting-Ambiance.png');
 }
 #card{

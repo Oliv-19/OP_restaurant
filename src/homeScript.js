@@ -1,7 +1,9 @@
 import './home.css'
 
-function createDomElem(tagName, value, id){
+function createDomElem(tagName, value, id='', classId=''){
     let elem= document.createElement(tagName)
+    
+    elem.className = classId 
     elem.id = id
     if(tagName == 'img'){
       elem.src = value

@@ -2,6 +2,7 @@ import './contact.css'
 import {createDomElem} from './homeScript'
 
 function contactDom(contentDiv){
+    let content = createDomElem('div','','bg')
     
     let card = createDomElem('div','','card')
     let form = createDomElem('form','','form')
@@ -10,7 +11,7 @@ function contactDom(contentDiv){
     let contact={
         phoneNumber: createDomElem('p', '📞 123-456-789', 'number'),
         email: createDomElem('p', '✉️ contact@Tomsrestaurant.com', 'mail'),
-        location: createDomElem('p', ' 📍 Wakanda', 'location'),
+        location: createDomElem('p', ' 📍 Nowhere', 'location'),
     }
 
     let formItems = {
@@ -35,6 +36,7 @@ function contactDom(contentDiv){
     card.appendChild(contact.location)
 
     card.appendChild(form)
-    contentDiv.appendChild(card)
+    content.appendChild(card)
+    contentDiv.appendChild(content)
 }
 export {contactDom}
