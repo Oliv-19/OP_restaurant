@@ -22,12 +22,12 @@ import { contactDom } from "./contactScript";
                 }
             }
         },
-        event:function(){
-            DomElems(this.contentDiv)
+        init:function(){
+            contactDom(this.contentDiv)
             this.nav.addEventListener('click', (e) => {this.changeTab(e)})
         }
     }
     
-    return tabs.event()
+    return tabs.init()
 }())
 

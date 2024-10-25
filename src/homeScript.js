@@ -1,40 +1,53 @@
 import './home.css'
 
-function createDomElem(tagName, value, id='', classId=''){
-    let elem= document.createElement(tagName)
+class CreateDomElem{
+  constructor(tagName, value, id='', classId=''){
+    this.elem= document.createElement(tagName)
     
-    elem.className = classId 
-    elem.id = id
+    this.elem.className = classId 
+    this.elem.id = id
     if(tagName == 'img'){
-      elem.src = value
+      this.elem.src = value
     } else {
-      elem.textContent= value
+      this.elem.textContent= value
     }
-    return elem
+    return this.elem
+  }
+  static createElemsFromObj(object){
+    for(let elem in object){
+      let tag = object[elem][0]
+      let content = object[elem][1]
+      let id = elem
+      object[elem] = new CreateDomElem(tag, content, id)
+    }
+  }
+    
 }
 
 function DomElems(contentDiv){ 
     let imgSrc='https://mystickermania.com/cdn/stickers/tom-and-jerry/tom-jerry-tom-eating-burger-512x512.png'
     let pText='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
+    let elems = {
+      title: ['div', ''],
+      info: ['div', ''],
+      h1: ['h1', "Tom's restaurant"],
+      imgWrapper : ['div', ' '],
+      img : ['img', imgSrc],
+      h3 :['h3', 'Welcome'],
+      p : ['p', pText],
+    }
+    CreateDomElem.createElemsFromObj(elems)
 
-    let title = createDomElem('div', " ", 'title')
-    let info = createDomElem('div', " ", 'info')
-    let h1 = createDomElem('h1', "Tom's restaurant", 'h1')
-    let imgWrapper = createDomElem('div', ' ', 'imgWrapper')
-    let img = createDomElem('img', imgSrc, 'img')
-    let h3 = createDomElem('h3', 'Welcome', 'h3')
-    let p = createDomElem('p', pText, 'p')
-    
-    title.appendChild(h1)
-    imgWrapper.appendChild(img)
-    title.appendChild(imgWrapper)
-    contentDiv.appendChild(title)
+    elems.title.appendChild(elems.h1)
+    elems.imgWrapper.appendChild(elems.img)
+    elems.title.appendChild(elems.imgWrapper)
+    contentDiv.appendChild(elems.title)
 
-    info.appendChild(h3)
-    info.appendChild(p)
-    contentDiv.appendChild(info)
+    elems.info.appendChild(elems.h3)
+    elems.info.appendChild(elems.p)
+    contentDiv.appendChild(elems.info)
 }
 
-export {DomElems, createDomElem}
+export {DomElems, CreateDomElem}
 

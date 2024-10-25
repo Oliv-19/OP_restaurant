@@ -26,7 +26,7 @@ span{
     font-size: 0.6em;
     letter-spacing: 4px;
 }
-button{
+#button{
     
     appearance: none;
     border: none;
@@ -37,7 +37,7 @@ button{
     height: 40px;
     width: 70px;
     border-radius: 50px;
-}button:hover, button:focus{
+}#button:hover, #button:focus{
     cursor: pointer;
     background-color: #3a5a6e;
     box-shadow: 4px 4px 5px #1e3645;
