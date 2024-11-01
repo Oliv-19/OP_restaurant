@@ -1,0 +1,126 @@
+dialog{
+    border: 2px solid white;
+    background-color: #516e7fef;
+    margin: auto;
+    color: white;
+    border-radius:  15px ;
+    height: 50%;
+    width: 50%;
+    padding: 2%;
+    /* overflow: hidden; */
+}
+#divDialog{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#cartTitle{
+    height: 45px;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    /* align-content: center;
+    justify-items: center; */
+}
+#closeBtn{
+    align-self: start;
+    justify-self: end;
+    text-align: center;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 0.7em;
+    font-weight: 700;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}#closeBtn:hover{
+    cursor: pointer;
+    background-color: #3a5a6e;
+    box-shadow: 4px 4px 5px #1e3645;
+}
+
+
+#cartItems{
+    height: 200px;
+    background-color: #364954b4;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+#orderDiv{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#orderBtn{
+    appearance: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 700;
+    border: none;
+    height: 33px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #3a5a6e;
+    text-align: center;
+    
+    box-shadow: 2px 4px 6px 0px #0000008c;
+}#orderBtn:hover{
+    cursor: pointer;
+    background-color: #1e3645;
+}#orderBtn:focus{
+    background-color: #1e3645;
+}
+
+#divItem, #divTitle{
+    background-color: #3a5a6e;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 4fr 1fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+    font-size: 0.6em;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+#divItem:nth-of-type(2n+1){
+    background-color: #1e3645;
+}
+
+#divTitle{
+    background-color: #1e3645;
+    padding: 5px 20px;
+    font-size: 0.5em;
+    color: #bcd5e4;
+    border-bottom: 3px solid #516e7fef;
+}
+#itemTitle, #itemName{
+    justify-self: left;
+}
+#itemDel{
+    appearance: none;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    border: none;
+    height: 25px;
+    width: 35px;
+    border-radius: 10px;
+    background-color: #a93b3b;
+    text-align: center;
+    
+    box-shadow: 2px 4px 6px 0px #0000008c;
+}#itemDel:hover{
+    cursor: pointer;
+    background-color: #7b2929;
+}#itemDel:focus{
+    background-color: #c94d4d;
+}

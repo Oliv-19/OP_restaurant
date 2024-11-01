@@ -1,5 +1,6 @@
 import './menu.css'
 import {CreateDomElem} from './homeScript'
+import {events} from './pubSub'
 
 
 
@@ -8,10 +9,7 @@ class food{
         this.name= name
         this.img= img
         this.price= price
-        
-    }
-    createCard(wrapper){
-        let elems={
+        this.elems={
             item : ['div',''],
             text :['div',''],
             foodName : ['h1',this.name],
@@ -19,15 +17,30 @@ class food{
             price: ['h3', '$'+this.price],
             buy: ['button', '+'],
         }
-        CreateDomElem.createElemsFromObj(elems)
+        
+    }
+    createCard(wrapper){
+        // let elems={
+        //     item : ['div',''],
+        //     text :['div',''],
+        //     foodName : ['h1',this.name],
+        //     foodImg: ['img', this.img],
+        //     price: ['h3', '$'+this.price],
+        //     buy: ['button', '+'],
+        // }
+        CreateDomElem.createElemsFromObj(this.elems)
 
-        elems.item.appendChild(elems.foodImg)
-        elems.text.appendChild(elems.foodName)
-        elems.text.appendChild(elems.price)
-        elems.price.appendChild(elems.buy)
-        elems.item.appendChild(elems.text)
-        wrapper.appendChild(elems.item)
-        return elems.item
+        this.elems.item.appendChild(this.elems.foodImg)
+        this.elems.text.appendChild(this.elems.foodName)
+        this.elems.text.appendChild(this.elems.price)
+        this.elems.price.appendChild(this.elems.buy)
+        this.elems.item.appendChild(this.elems.text)
+        wrapper.appendChild(this.elems.item)
+        return this.elems.item
+    }
+    pub(){
+        
+        events.publish('addToCart', this)
     }
 
 }
@@ -41,11 +54,12 @@ function menuDom(contentDiv){
         chicken : new food('Fried Chicken', 'https://www.crimsoncoward.com/wp-content/uploads/2023/10/3Chicken-Tenders.png' ,3),
     }
     let wrapper = new CreateDomElem('div','','wrapper') 
-
     for(let dish in dishes){
         
         dishes[dish].createCard(wrapper)
+        dishes[dish].elems.buy.addEventListener('click',()=> dishes[dish].pub())
     }
+    
     contentDiv.appendChild(wrapper)
 }
 export {menuDom}

@@ -1,6 +1,14 @@
 import './contact.css'
 import {CreateDomElem} from './homeScript'
 
+function sendMessage(e, elems){
+    e.preventDefault()
+    elems.card.textContent = ''
+    elems.contactUS.textContent = 'Message send'
+    elems.contactUS.className='send'
+    elems.card.appendChild(elems.contactUS)
+
+}
 function contactDom(contentDiv){
 
     let elems ={
@@ -20,8 +28,11 @@ function contactDom(contentDiv){
     CreateDomElem.createElemsFromObj(elems)
 
     elems.name.placeholder ='Name'
+    elems.name.required ='true'
     elems.email.placeholder ='Email'
+    elems.email.required ='true'
     elems.textBox.placeholder ='Text...'
+    elems.textBox.required ='true'
     elems.textBox.cols ='55'
     elems.textBox.rows ='5'
     elems.submit.type= 'submit'
@@ -39,5 +50,7 @@ function contactDom(contentDiv){
     elems.card.appendChild(elems.form)
     elems.bg.appendChild(elems.card)
     contentDiv.appendChild(elems.bg)
+
+    elems.form.addEventListener('submit', (e)=> {sendMessage(e, elems)})
 }
 export {contactDom}

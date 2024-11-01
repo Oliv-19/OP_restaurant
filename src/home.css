@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: #ffebcd;
     background: center no-repeat url('https://orders.co/static/99a59eec0735fca313bf2b93349bd5d6/f659b/Italian-Restaurant-Design-Creating-an-Inviting-Ambiance.png');
 }
 #title>h1{

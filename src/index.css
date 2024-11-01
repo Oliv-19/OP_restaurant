@@ -15,7 +15,7 @@ nav{
     height: 10vh;
     background-color: #516e7f;
     display: grid;
-    grid-template-columns: 3fr repeat(3, 1fr);
+    grid-template-columns: 3fr repeat(4, 1fr);
     grid-template-rows: 1fr;
     align-items: center;
     justify-items: center;
@@ -31,7 +31,7 @@ span{
     appearance: none;
     border: none;
     background-color: transparent;
-    color: white;
+    color: #fff;
     font-size: 1em;
     font-weight: 700;
     height: 40px;
@@ -41,6 +41,11 @@ span{
     cursor: pointer;
     background-color: #3a5a6e;
     box-shadow: 4px 4px 5px #1e3645;
+}
+.cartSvg{
+    color: white;
+    width: 30px;
+    pointer-events: none;
 }
 
 footer{

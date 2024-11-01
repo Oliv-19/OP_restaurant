@@ -2,6 +2,7 @@ import './index.css'
 import { DomElems } from "./homeScript";
 import { menuDom } from "./menuScript";
 import { contactDom } from "./contactScript";
+import { cartDom } from "./cartScript";
 
 (function(){
     let tabs ={
@@ -9,21 +10,26 @@ import { contactDom } from "./contactScript";
         nav : document.querySelector('nav'),
         changeTab:function(e){
             if(e.target.id == 'button'){
-                this.contentDiv.textContent= ''
+
+
+                
+                
                 if(e.target.className == 'home'){
-                    
+                    this.contentDiv.textContent= ''
                     DomElems(this.contentDiv)
                 } else if(e.target.className == 'menu'){
-                    
+                    this.contentDiv.textContent= ''
                     menuDom(this.contentDiv)
                 } else if(e.target.className == 'contact'){
-                    
+                    this.contentDiv.textContent= ''
                     contactDom(this.contentDiv)
+                } else if(e.target.className == 'cart'){
+                    cartDom(this.contentDiv)
                 }
             }
         },
         init:function(){
-            contactDom(this.contentDiv)
+            menuDom(this.contentDiv)
             this.nav.addEventListener('click', (e) => {this.changeTab(e)})
         }
     }
