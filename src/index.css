@@ -4,13 +4,14 @@
     margin: 0;
 }
 body{
+    overflow-x: hidden;
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
 
 nav{
-    
+    width: 100vw;
     color: white;
     height: 10vh;
     background-color: #516e7f;
@@ -52,8 +53,24 @@ footer{
     color: white;
     height: 10vh;
     background-color: #516e7f;
-    
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 500px) {
+    .titleNav{
+        display: none;
+    }
+    nav{
+        font-size: 0.8em;
+        grid-template-columns: repeat(4, 1fr); 
+    }
+    .cartSvg{
+        width: 20px;
+    }
+    footer{
+        font-size: 0.8em;
+    }
 }

@@ -9,6 +9,8 @@ function order(elems){
     elems.divDialog.textContent = ''
     elems.cartTitle.textContent ='Order Completed'
 
+    cartOrders = []
+
     elems.cartTitle.appendChild(elems.closeBtn)
     elems.divDialog.appendChild(elems.cartTitle)
 }
@@ -31,15 +33,20 @@ function getTotalPrice(){
     return total
 }
 
-function delOrder(e, totalPrice){
-    
-    cartOrders.filter((item, i)=>{
-        if (item.name === e.target.parentElement.className){
-            cartOrders.splice(i, 1)
+function delOrder(e, totalPrice, itemCount){
+
+    let arrayElem = cartOrders.findIndex(item => item.name == e.target.parentElement.className)
+
+    if(arrayElem != -1){
+        cartOrders.splice(arrayElem, 1)
+        totalPrice.textContent = 'Total: $'+ getTotalPrice()
+        itemCount.textContent = itemCount.textContent- 1
+
+        
+        if(itemCount.textContent <= 0){
             e.target.parentElement.remove()
-            totalPrice.textContent = 'Total: $'+ getTotalPrice()
         }
-    })
+    }
 }
 
 function cartItemsDom(elems) {
@@ -50,7 +57,6 @@ function cartItemsDom(elems) {
 
             uniqueItems.add(item.name);
             let count = cartOrders.filter(v => (v === item)).length;
-            
             let cartElem = {
                 divItem: ['div', ''],
                 itemName: ['h1', item.name],
@@ -68,7 +74,7 @@ function cartItemsDom(elems) {
             cartElem.divItem.appendChild(cartElem.itemDel);
             elems.cartItems.appendChild(cartElem.divItem);
 
-            cartElem.itemDel.addEventListener('click',(e)=> {delOrder(e, elems.totalPrice)})
+            cartElem.itemDel.addEventListener('click',(e)=> {delOrder(e, elems.totalPrice, cartElem.itemCount)})
         }
     });
 

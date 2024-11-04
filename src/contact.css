@@ -1,5 +1,5 @@
 #bg{
-    width: 100%;
+    width: 100vw;
     height: 100%;
     display: flex;
     background-color: #ffebcd;
@@ -14,7 +14,6 @@
     grid-template-rows: 50px 50px 1fr;
     align-items: center;
     justify-items: center;
-    /* gap: 15px; */
     padding:  20px 5px;
     background-color: #516e7fef;
     border-radius: 50px 20px;
@@ -85,5 +84,29 @@ input, textarea{
 }
 .send{
     margin-top: 15%;
+}
+@media (max-width: 1024px) {
+    #card{
+        width: 60%;
+    }
+}
+@media (max-width: 720px) {
+    #bg{
+       padding: 30px 0px;
+    }
+    #card{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    textarea{
+        width: 75%;
+    }
 }
 

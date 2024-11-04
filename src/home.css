@@ -12,13 +12,10 @@
 #content{
     display: flex;
     flex-direction: column;
-    
+    width: 100vw;
 }
 #title{
     min-height: 90vh;
-}
-
-#title{
     color: white;
     display: flex;
     flex-direction: column;
@@ -61,4 +58,14 @@ img{
 #p{
     margin-top: 50px;
     font-size: 1.5em;
+}
+
+@media (max-width: 500px) {
+    #content{
+        width: 97vw;
+    }
+    #info{
+        font-size: 0.9em;
+        padding: 5px 20px;
+    }
 }

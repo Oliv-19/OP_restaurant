@@ -7,14 +7,13 @@ dialog{
     height: 50%;
     width: 50%;
     padding: 2%;
-    /* overflow: hidden; */
+     overflow: hidden; 
 }
 #divDialog{
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 5px;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 #cartTitle{
     height: 45px;
@@ -123,4 +122,31 @@ dialog{
     background-color: #7b2929;
 }#itemDel:focus{
     background-color: #c94d4d;
+}
+@media (max-width: 1040px) {
+    dialog{
+        width: 60%;
+        height: 60%;
+    }
+}
+@media (max-width: 500px) {
+    dialog{
+        width: 85%;
+        height: 85%;
+    }
+    #cartItems{
+        font-size: 0.8em;
+        height: 270px;
+    }
+    #orderDiv{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px;
+        font-size: 0.7em;
+        height: 70px;
+    }
+    #orderBtn{
+        font-size: 1.2em;
+    }
 }
