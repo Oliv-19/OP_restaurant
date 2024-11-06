@@ -132,7 +132,7 @@ dialog{
 @media (max-width: 500px) {
     dialog{
         width: 85%;
-        height: 85%;
+        height: 80%;
     }
     #cartItems{
         font-size: 0.8em;
