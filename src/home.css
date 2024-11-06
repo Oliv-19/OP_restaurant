@@ -12,7 +12,7 @@
 #content{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
 }
 #title{
     min-height: 90vh;
@@ -61,9 +61,9 @@ img{
 }
 
 @media (max-width: 500px) {
-    #content{
+    /* #content{
         width: 97vw;
-    }
+    } */
     #info{
         font-size: 0.9em;
         padding: 5px 20px;
