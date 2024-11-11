@@ -25,7 +25,7 @@ import { cartDom } from "./cartScript";
             }
         },
         init:function(){
-            menuDom(this.contentDiv)
+            DomElems(this.contentDiv)
             this.nav.addEventListener('click', (e) => {this.changeTab(e)})
         }
     }
