@@ -20,14 +20,6 @@ class food{
         
     }
     createCard(wrapper){
-        // let elems={
-        //     item : ['div',''],
-        //     text :['div',''],
-        //     foodName : ['h1',this.name],
-        //     foodImg: ['img', this.img],
-        //     price: ['h3', '$'+this.price],
-        //     buy: ['button', '+'],
-        // }
         CreateDomElem.createElemsFromObj(this.elems)
 
         this.elems.item.appendChild(this.elems.foodImg)

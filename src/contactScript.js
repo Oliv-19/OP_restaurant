@@ -10,7 +10,6 @@ function sendMessage(e, elems){
 
 }
 function contactDom(contentDiv){
-
     let elems ={
         bg:['div',''],
         card:['div',''],

@@ -10,10 +10,6 @@ import { cartDom } from "./cartScript";
         nav : document.querySelector('nav'),
         changeTab:function(e){
             if(e.target.id == 'button'){
-
-
-                
-                
                 if(e.target.className == 'home'){
                     this.contentDiv.textContent= ''
                     DomElems(this.contentDiv)
